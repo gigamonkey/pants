@@ -29,7 +29,7 @@ class TaskRegistrar(object):
     self.serialize = serialize
     self.name = name
 
-    if isinstance(type(action), type) and issubclass(action, Task):
+    if issubclass(type(action), Task):
       self._task = action
     else:
       args, varargs, keywords, defaults = inspect.getargspec(action)
